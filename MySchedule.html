@@ -1,180 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TLRD Schedule</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" 
+        content="width=device-width,
+                 initial-scale=1,
+                 shrink-to-fit=no">
+  <title>
+    TLRD Schedule
+  </title>
+  
+  <!-- Include Bootstrap for styling -->
+  <link rel="stylesheet"
+        href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!-- Include the Bootstrap Table CSS
+  for the table -->
+  <link rel="stylesheet" 
+        href=
+"https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
 </head>
 <body>
-
-<div class="container">
-  <p align=center style='text-align:center'><b><span
+  <div class="container">
+    <h1 class="text text-info text-center ">
+      <span
 style='font-size:48.0pt;line-height:105%;font-family:"Monotype Corsiva"'>To
 Live r<span class=GramE>’<span style='mso-spacerun:yes'>  </span>Die</span></span></b></p>
 
-  <p>Regularly Scheduled Meeting times are Wednesdays: (Meetings start on schedule, please be prompt)</p>            
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Time Zone</th>
-        <th>Summer Schedule</th>
-        <th>Winter schedule</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Hawaii-Aleutian Standard Time</td>
-        <td>3:00 PM</td>
-        <td>3:00 PM</td>
-      </tr>
-      <tr>
-        <td>Alaska Daylight Time</td>
-		<td>5:00 PM</td>
-        <td>5:00 PM</td>
-	  </tr>
-	  <tr>
-		<td>Pacific Daylight Time</td>
-		<td>6:00 PM</td>
-		<td>6:00 PM</td>
-	  </tr>
-      <tr>
-		<td>Mountain Standard Time</td>
-		<td>6:00 PM</td>
-		<td>6:00 PM</td>
-      </tr>
-      <tr>
-		<td>Mountain Daylight Time</td>
-		<td>7:00 PM</td>
-		<td>7:00 PM</td>
-      <tr/>
-      <tr>
-		<td>Central Daylight Time</td>
-		<td>8:00 PM</td>
-		<td>8:00 PM</td>
-	  </tr>
-      <tr>
-		 <td>Eastern Daylight Time</td>
-		 <td>9:00 PM</td>
-		 <td>9:00 PM</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <p>Regularly Scheduled Meeting times are Wednesdays: (Meetings start on schedule, please be prompt)</p>      
+    </h1>
 
+     <table class="table-striped border-success">
+        <thead>
+          <tr>
+            <th data-field="id">
+              <span class="text-info">
+               Time Zone
+              </span>
+            </th>
+            <th data-field="name">
+              <span class="text-info">
+                Summer Schedule
+              </span>
+            </th>
+            <th data-field="date">
+              <span class="text-info">
+               Winter schedule
+              </span>
+            </th>
+          </tr>
+        </thead>
+      </table>
+  </div>
+  
+  <!-- Include jQuery and other required
+  files for Bootstrap -->
+  <script src=
+"https://code.jquery.com/jquery-3.3.1.min.js">
+  </script>
+  <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+  </script>
+  <script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+  </script>
+  
+  <!-- Include the JavaScript file
+  for Bootstrap table -->
+  <script src=
+"https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js">
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+  
+      // Use the given data to create 
+      // the table and display it
+      $('table').bootstrapTable({
+        data: mydata
+      });
+    });
+  
+    // Specify the JSON data to be displayed
+    var mydata =
+      [
+        {
+          "id": "Hawaii-Aleutian Standard Time",
+          "name": "3:00 PM",
+          "date": "3:00 PM"
+        },
+        {
+          "id": "Alaska Daylight Time",
+          "name": "5:00 PM",
+          "date": "5:00 PM"
+        },
+        {
+          "id": "Pacific Daylight Time",
+          "name": "6:00 PM",
+          "date": "6:00 PM"
+        },
+        {
+          "id": "Mountain Standard Time",
+         "name": "6:00 PM",
+          "date": "6:00 PM"
+        },
+        {
+          "id": "Mountain Standard Time",
+          "name": "7:00 PM",
+          "date": "7:00 PM"
+        },
+        {
+         "id": "Central Daylight Time",
+          "name": "8:00 PM",
+          "date": "8:00 PM"
+        },
+        {
+         "id": "Eastern Daylight Time",
+          "name": "9:00 PM",
+          "date": "9:00 PM"
+        }
+      ];
+  </script>
 </body>
 </html>
-
-<!--<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>TLRD Schedule</title>
-  </head>
-  <body>
-<p align=center style='text-align:center'><b><span
-style='font-size:48.0pt;line-height:105%;font-family:"Monotype Corsiva"'>To
-Live r<span class=GramE>’<span style='mso-spacerun:yes'>  </span>Die</span></span></b></p>
-
-<p align=center style='text-align:center'><u><span
-style='font-size:26.0pt;line-height:105%;font-family:"Monotype Corsiva";
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Meeting Schedule<o:p></o:p></span></u></p>
-    
-<p class=MsoNormal><span style='font-size:15.0pt;line-height:105%;mso-bidi-font-family:Calibri'>    Regularly Scheduled Meeting times are Wednesdays:</span></u></p>
-
-<p class=MsoNormal><span style='font-size:15.0pt;line-height:105%;mso-bidi-font-family:Calibri'>    (Meetings
-start on schedule, please be prompt)</span></u></p>
-    
-  <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0>
-  <tr>
-    <td width=204 align=center><p><span style='font-size:15.0pt;height=25px'>Time Zone</span></p></td>
-    <td width=204 align=center valign=top style='width:153.0pt;padding:0in 5.4pt'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri;height=25px'>Summer Schedule</span></p>
-    </td>
-    <td width=192 align=center valign=top style='width:2.0in;padding:0in 5.4pt'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri;height=25px'>Winter Shedule</span></p>
-    </td>
-  </tr>
-  <tr>
-    <td style='width:300pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>Hawaii-Aleutian Standard Time</span></p>
-    </td>
-    <td align=center style='width:153.0pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>3:00pm</span></p>
-    </td>
-    <td align=center style='width:2.0in;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>3:00pm</span></p>
-    </td>
-  </tr>
-  <tr>
-    <td style='width:300pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>Alaska Daylight Time</span></p>
-    </td>
-    <td align=center style='width:153.0pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>5:00pm</span></p>
-    </td>
-    <td align=center style='width:2.0in;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>5:00pm</span></p>
-    </td>
-  </tr>
-  <tr>
-    <td style='width:300pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>Pacific Daylight Time</span></p>
-    </td>
-    <td align=center style='width:153.0pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>6:00pm</span></p>
-    </td>
-    <td align=center style='width:2.0in;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>6:00pm</span></p>
-    </td>
-  </tr>
-  <tr>
-    <td style='width:300pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>Mountain Standard Time</span></p>
-    </td>
-    <td align=center style='width:153.0pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>6:00pm</span></p>
-    </td>
-    <td align=center style='width:2.0in;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>6:00pm</span></p>
-    </td>
-  </tr>
-  <tr>
-    <td style='width:300pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>Mountain Daylight Time</span></p>
-    </td>
-    <td align=center style='width:153.0pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>7:00pm</span></p>
-    </td>
-    <td align=center style='width:2.0in;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>7:00pm</span></p>
-    </td>
-  </tr>
-  <tr>
-    <td style='width:300pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>Central Daylight Time</span></p>
-    </td>
-    <td align=center style='width:153.0pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>8:00pm</span></p>
-    </td>
-    <td align=center style='width:2.0in;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>8:00pm</span></p>
-    </td>
-  </tr>
-  <tr>
-    <td style='width:300pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>Eastern Daylight Time</span></p>
-    </td>
-    <td align=center style='width:153.0pt;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>9:00pm</span></p>
-    </td>
-    <td align=center style='width:2.0in;padding:0in 5.4pt;height:50px'>
-    <p><span style='font-size:15.0pt;mso-bidi-font-family:Calibri'>9:00pm</span></p>
-    </td>
-  </tr>
-  </table>
-  </body>
-</html>-->
