@@ -5,27 +5,35 @@
     <meta name="viewport" content="width=device-width" />
     <title>Contact</title>
     <link rel="icon" type="image/x-icon" href="2 L R D Small.ico">  
-<!-- Include Bootstrap for styling -->
-  <link rel="stylesheet"
+    <!-- Include Bootstrap for styling -->
+    <link rel="stylesheet"
         href=
 "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
    
   </head>
   <body>
-<div class="container">
+
+    <div class="container">
   <form action="action_page.php">
 
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input type="text" id="fname" name="firstname" placeholder="Your name.">
 
     <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.">
+
+    <label for="lname">Email</label>
+    <input type="text" id="Email" name="Email" placeholder="Your Email.">
+
+    <label for="lname">Phone</label>
+    <input type="text" id="Phone" name="lastname" placeholder="Your Phone.">
+
 
     <label for="country">Country</label>
     <select id="country" name="country">
+      <option value="usa">USA</option>
       <option value="australia">Australia</option>
       <option value="canada">Canada</option>
-      <option value="usa">USA</option>
     </select>
 
     <label for="subject">Subject</label>
@@ -35,5 +43,6 @@
 
   </form>
 </div>
+    
   </body>
 </html>
