@@ -1,95 +1,108 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <title>Contact Form</title>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-<!--
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('RtFLeHVtFGgCS8rMa');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_wa3bsab', 'template_3vzy9vn', '#contact-form')
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
 <body>
-  <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Schedule</li>
-  </ol>
-</nav>
-  <div class="container">
-    <h1 class="text text-info text-center ">
-
-      <span 
-style='font-size:48.0pt;line-height:105%;font-family:"Monotype Corsiva"'>2
-Live r<span class=GramE>’<span style='mso-spacerun:yes'>  </span>Die  </span></span></b><img src="2 L R D Small 10.jpg"/></h1>
-
-    -->
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Contact</title>
-    <link rel="icon" type="image/x-icon" href="Images/2 L R D Small.ico">  
-    <!-- Include Bootstrap for styling -->
-    <link rel="stylesheet"
-        href=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-  <!-- Include the Bootstrap Table CSS
-  for the table -->
-  <link rel="stylesheet" 
-        href=
-"https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
-    
-  </head>
-  <body>
-
-  <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Contact</li>
-  </ol>
-</nav>
-  <div class="container">
-    <h1 class="text text-info text-center ">
-
-      <span 
-style='font-size:48.0pt;line-height:105%;font-family:"Monotype Corsiva"'>2
-Live r<span class=GramE>’<span style='mso-spacerun:yes'>  </span>Die  </span></span></b><img src="Images/2 L R D Small 10.jpg"/></h1>
-
-
-    
-    <div class="container">
-  <form action="mailto:mikelazelle@msn.com">
-
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.">
-    <br>
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name.">
-    <br>
-  
-    <label for="Mname">Meeting Name</label>
-    <input type="text" id="mname" name="Mname" placeholder="What should we call you.">
-    <br>
-
-    <label for="lname">Email</label>
-    <input type="text" id="Email" name="Email" placeholder="Your Email."><p><span style='color=red'>This Field Is Required.</span></p>
-    <br>
-    
-    <label for="lname">Phone</label>
-    <input type="text" id="Phone" name="Phone" placeholder="Your Phone.">
-    <br>
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="usa">USA</option>
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-    </select>
-    <br>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <button type="submit" value="submit"></button>
-
-  </form>
-</div>
-    
-  </body>
+    <form id="contact-form">
+            <div class="form-group">
+               <input type="hidden" name="contact_number">
+            </div>
+            <!-- Start Input Name -->
+            <div class="form-group">
+                <label for="from_name">Name</label>
+                <input type="text" class="form-control" id="from_name" name="from_name" placeholder="Your name" required />
+                <small class="form-text text-muted">Please fill your name</small>
+            </div>
+            <!-- End Input Name -->
+            <!-- Start Input Email -->
+            <div class="form-group">
+                <label for="reply_to">Email</label>
+                <input type="email" class="form-control" id="reply_to" name="reply_to" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <!-- End Input Email -->
+            <!-- Start Input Telephone -->
+            <div class="form-group">
+                <label for="phone_number">Phone</label>
+                <input type="tel" class="form-control" id="inputPhone" name="phone_number" placeholder="(099) xxx-xxxx" pattern="\d{3}\d{3}\d{4}" required />
+                <small class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+            </div>
+            <!-- End Input Telephone -->
+            <!-- Start Input Date , Start Time and End Time -->
+            <div class="form-row">
+                <!-- Start Input Date -->
+                <div class="form-group col-md-4">
+                    <label for="inputDate">Date</label>
+                    <input type="date" class="form-control" id="input_Date" name="input_Date" required />
+                    <small class="form-text text-muted">Please choose date and time for meeting.</small>
+                </div>
+                <!-- End Input Date -->
+                <!-- Start Input Start Time -->
+                <div class="form-group col-md-4">
+                    <label>Start Time</label>
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <select class="form-control mr-1" id="input_StartTimeHour" name="input_StartTimeHour" required>
+                            <option value="" disabled selected>Hour</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="pl-1 pr-2">:</div>
+                        <select class="form-control" id="inputStartTimeMinute" name="inputStartTimeMinute" required>
+                            <option value="" disabled selected>Min</option>
+                            <option value="00">00</option>
+                            <option value="00">30</option>
+                        </select>
+                    </div>
+                </div>
+             </div>
+                <!-- End Input Start Time -->
+                <!-- Start Input Remark -->
+                <div class="form-group">
+                    <label for="textAreaRemark">Notes</label>
+                    <textarea class="form-control" name="textAreaRemark" id="textAreaRemark" rows="2" placeholder="Tell us you want more..."></textarea>
+                </div>
+                <!-- End Input Remark -->
+                <!-- Start Submit Button -->
+                <button class="btn btn-primary btn-block col-lg-2" type="submit">Submit</button>
+                <!-- End Submit Button -->
+    </form>
+</body>
 </html>
