@@ -1,4 +1,4 @@
-<p align=center style='text-align:center'><b><span
+<!-- <p align=center style='text-align:center'><b><span
 style='font-size:48.0pt;line-height:105%;font-family:"Monotype Corsiva"'>2
 Live r<span class=GramE>’<span style='mso-spacerun:yes'>  </span>Die</span></span></b></p>
 
@@ -7,5 +7,22 @@ Live r<span class=GramE>’<span style='mso-spacerun:yes'>  </span>Die</span></s
 
 <p align=center style='text-align:center'><u><span
 style='font-size:26.0pt;line-height:105%;font-family:"Monotype Corsiva";
-mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Meeting Schedule<o:p></o:p></span></u></p>
+mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>Meeting Schedule<o:p></o:p></span></u></p> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Show Email Fields</h1>
+
+<h3>Show an email field (allows only one email address):</h3>
+<form action="/action_page.php">
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email">
+  <input type="submit">
+</form>
+
+</body>
+</html>
+
 
